@@ -49,16 +49,60 @@ console.log(gameCard);
 
 let shuffledChild = Array.from(gameCard).sort(() => .5 - Math.random());
 
+// styling the match card 
+const card_matches = () => {
+    let card_selected = document.querySelectorAll(".card_selected");
+
+    card_selected.forEach((curElem) => {
+        curElem.classList.add("card_match")
+    })
+}
+
 let clickCount = 0;
+let firstCard = "";
+let secondCard = "";
+
+
+// step 7
+const resetGame = () => {
+    firstCard = "";
+    secondCard = "";
+    clickCount = 0;
+
+    let card_selected = document.querySelectorAll(".card_selected");
+
+    card_selected.forEach((curElem) => {
+        curElem.classList.remove("card_selected")
+    })
+}
 
 // step 4
 parentDiv.addEventListener("click", (event) => {
     let curCard = event.target;
-    
+
     clickCount ++;
 
     if (clickCount < 3) {
-        curCard.classList.add("card_selected");
+
+        if (clickCount === 1) {
+            firstCard = curCard.dataset.name;
+            curCard.classList.add("card_selected");
+
+        } else {
+            secondCard = curCard.dataset.name;
+            curCard.classList.add("card_selected");
+        }
+
+        if(firstCard !== "" && secondCard !== "") {
+            if(firstCard === secondCard) {
+                // curCard.classList.add("card_match")
+                card_matches()
+                resetGame()
+            } else {
+                resetGame()
+            }
+        }
+
     }
     
     if(curCard.id === "card-section"){ return false }
