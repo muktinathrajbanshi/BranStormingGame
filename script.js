@@ -49,11 +49,20 @@ console.log(gameCard);
 
 let shuffledChild = Array.from(gameCard).sort(() => .5 - Math.random());
 
+let clickCount = 0;
+
 // step 4
 parentDiv.addEventListener("click", (event) => {
     let curCard = event.target;
     
-    curCard.classList.add("card_selected");
+    clickCount ++;
+
+    if (clickCount < 3) {
+        curCard.classList.add("card_selected");
+    }
+    
+    if(curCard.id === "card-section"){ return false }
+
 })
 
 // step 1 to add the card 
