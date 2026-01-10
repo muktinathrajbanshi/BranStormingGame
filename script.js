@@ -49,6 +49,13 @@ console.log(gameCard);
 
 let shuffledChild = Array.from(gameCard).sort(() => .5 - Math.random());
 
+// step 4
+parentDiv.addEventListener("click", (event) => {
+    let curCard = event.target;
+    
+    curCard.classList.add("card_selected");
+})
+
 // step 1 to add the card 
 for (let i=0; i<shuffledChild.length; i++) {
     const childDiv = document.createElement("div")

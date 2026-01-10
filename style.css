@@ -49,3 +49,7 @@ span {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 2rem;
 }
+
+.card_selected {
+  border: 0.2rem solid var(--border-color);
+}
