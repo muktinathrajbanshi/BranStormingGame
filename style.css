@@ -32,7 +32,7 @@ span {
 
 #card-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
 }
 
@@ -66,7 +66,7 @@ span {
   -ms-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
   transform-style: preserve-3d;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .card,
@@ -81,4 +81,16 @@ span {
   position: absolute;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+.front-card {
+  background: var(--border-color);
+  background-size: contain;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 2rem;
 }
