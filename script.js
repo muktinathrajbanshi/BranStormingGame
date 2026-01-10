@@ -85,12 +85,12 @@ parentDiv.addEventListener("click", (event) => {
     if (clickCount < 3) {
 
         if (clickCount === 1) {
-            firstCard = curCard.dataset.name;
-            curCard.classList.add("card_selected");
+            firstCard = curCard.parentNode.dataset.name;
+            curCard.parentNode.classList.add("card_selected");
 
         } else {
-            secondCard = curCard.dataset.name;
-            curCard.classList.add("card_selected");
+            secondCard = curCard.parentNode.dataset.name;
+            curCard.parentNode.classList.add("card_selected");
         }
 
         if(firstCard !== "" && secondCard !== "") {
