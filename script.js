@@ -96,10 +96,15 @@ parentDiv.addEventListener("click", (event) => {
         if(firstCard !== "" && secondCard !== "") {
             if(firstCard === secondCard) {
                 // curCard.classList.add("card_match")
-                card_matches()
-                resetGame()
+                setTimeout(() => {
+                    card_matches()
+                    resetGame()
+                }, 1000)
+                
             } else {
-                resetGame()
+                setTimeout(() => {
+                    resetGame()
+                }, 1000)
             }
         }
 
@@ -114,8 +119,20 @@ for (let i=0; i<shuffledChild.length; i++) {
     const childDiv = document.createElement("div")
     childDiv.classList.add("card")
     childDiv.dataset.name = shuffledChild[i].name;
-    childDiv.style.backgroundImage = `url(${shuffledChild[i].img})`;
+    // childDiv.style.backgroundImage = `url(${shuffledChild[i].img})`;
+
+    const front_div = document.createElement("div");
+    front_div.classList.add("front-card")
+
+    const back_div = document.createElement("div");
+    back_div.classList.add("back-card")
+
+    back_div.style.backgroundImage = `url(${shuffledChild[i].img})`;
+
     parentDiv.appendChild(childDiv)
+
+    childDiv.appendChild(front_div)
+    childDiv.appendChild(back_div)
 
 
 

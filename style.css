@@ -36,7 +36,7 @@ span {
   grid-gap: 2rem;
 }
 
-.card {
+/* .card {
   width: 10rem;
   height: 10rem;
   background-color: var(--bg-card);
@@ -56,4 +56,29 @@ span {
 
 .card_match {
   border: 0.2rem solid purple;
+} */
+
+.card {
+  position: relative;
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  padding: 2rem;
+}
+
+.card,
+.back-card,
+.front-card {
+  height: 10rem;
+  width: 10rem;
+}
+
+.back-card,
+.front-card {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
