@@ -30,4 +30,9 @@ const parentDiv = document.querySelector(selectors: "#card-section");
 for (let i=0; i<card-Selection.length; i++) {
     const childDiv = document.createElement(tagName: "div")
     childDiv.classList.add("card")
+    // childDiv.dataset.name = cardsArray[i].name;
+    parentDiv.appendChild(childDiv)
+
+
+
 }
