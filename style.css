@@ -30,6 +30,12 @@ span {
   color: var(--border-color);
 }
 
+#card-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
 .card {
   width: 10rem;
   height: 10rem;

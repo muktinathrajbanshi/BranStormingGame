@@ -25,12 +25,13 @@ let cardsArray = [
     }
 ]
 
-const parentDiv = document.querySelector(selectors: "#card-section");
+const parentDiv = document.querySelector("#card-section");
 
-for (let i=0; i<card-Selection.length; i++) {
-    const childDiv = document.createElement(tagName: "div")
+for (let i=0; i<cardsArray.length; i++) {
+    const childDiv = document.createElement("div")
     childDiv.classList.add("card")
-    // childDiv.dataset.name = cardsArray[i].name;
+    childDiv.dataset.name = cardsArray[i].name;
+    childDiv.style.backgroundImage = `url(${cardsArray[i].img})`;
     parentDiv.appendChild(childDiv)
 
 
